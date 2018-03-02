@@ -1,0 +1,23 @@
+## YAML Template.
+---
+applications:
+- name: sb-cloud-module
+  memory: 1G
+  buildpack: java_buildpack
+  env:
+    JAVA_OPTS: '-DAPP_ENV=prod'
+    APP_ENV: prod
+  path: target/sb-cloud-module-1.0-SNAPSHOT.jar
+  # host: sbcloud
+  ## domains: 
+  ##  - domain: cfapps.io
+  ##  - domain: creativelights.in
+  random-route: false
+  routes:
+    - route: cloud.creativelights.in
+  services:
+    - mysql-service
+    - cache-service
+    - mq-service
+    - config-service
+    - email-service

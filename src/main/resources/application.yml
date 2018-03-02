@@ -1,0 +1,144 @@
+## Spring Boot YAML Configuation for @profile(local)
+
+# ===============================
+# = Spring Boot Configuration
+# ===============================
+spring:
+    profiles: local
+    main:
+        banner-mode: "console"
+    jackson: 
+        serialization: 
+            FAIL_ON_EMPTY_BEANS: false
+    datasource:
+        url: jdbc:mysql://localhost:3306/DB_EXAMPLE?zeroDateTimeBehavior=convertToNull
+        username: root
+        password: Accoo7@k47
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        database-platform: MYSQL
+        properties:
+            hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    
+    # Embedded ActiveMQ Configuration Example
+    rabbitmq:
+        host: localhost
+        port: 5672
+        user: guest
+        password: guest
+            
+# ===============================
+# = Tomcat Configuration
+# ===============================            
+server:
+    port: 9443
+    contextPath: /mysbapp
+    session-timeout: 60
+    ssl:
+        enabled: true
+        key-store: classpath:private/keystorejks
+        key-password: password
+        key-store-provider: SUN
+        key-store-type: JKS
+        key-store-password: password
+        
+# ===============================
+# = Actuator configurations
+# ===============================
+management:
+    context-path: /actuator
+    security:
+        enabled: false
+        role: ROLE_SUPERUSER
+        
+# ===============================
+# = Logging configurations
+# ===============================
+logging:
+    level:
+        .: INFO
+        root: WARN
+        org.hibernate.SQL: debug
+        org.hibernate.type: TRACE
+        org.springframework: INFO
+        org.springframework.security: INFO
+        org.springframework.web: INFO
+        com.org.onclick: debug
+        
+---
+
+## Spring Boot YAML Configuation for @profile(cloud)
+# ===============================
+# = Spring Boot Configuration
+# ===============================
+spring:
+    profiles: cloud
+    main:
+        banner-mode: "console"
+    jackson: 
+        serialization: 
+            FAIL_ON_EMPTY_BEANS: false
+            
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        database-platform: MYSQL
+        properties:
+            hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+
+# ===============================
+# = Default configurations
+# ===============================            
+security:
+    basic:  
+        enabled: false
+    user:
+        name: admin@creativelights.in
+        password: Accoo7@k47
+
+# ===============================
+# = Actuator configurations
+# ===============================
+management:
+    # port: 9444
+    address: 127.0.0.1
+    context-path: /actuator
+    # ssl: 
+    #    enabled: true
+    #    key-store: classpath:private/keystorejks
+    #    key-password: password
+    security:
+        enabled: false
+        role: ROLE_SUPERUSER
+
+endpoints:
+    info:
+        id: info
+        enabled: true
+        sensitive: true
+    health:
+        id: health
+        enabled: true
+        sensitive: true
+    shutdown:
+        id: shutdown
+        enabled: false
+        
+# ===============================
+# = Logging configurations
+# ===============================
+logging:
+    level:
+        .: INFO
+        root: WARN
+        org.hibernate.SQL: debug
+        org.hibernate.type: TRACE
+        org.springframework: INFO
+        org.springframework.security: INFO
+        org.springframework.web: INFO
+        com.org.onclick: debug

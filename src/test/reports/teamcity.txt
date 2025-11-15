@@ -1,0 +1,5 @@
+##teamcity[testCount count='1' flowId='8772']
+##teamcity[testSuiteStarted name='OnclickEnvTest' locationHint='php_qn:///home/brijeshdhaker/IdeaProjects/creativelights.in/src/test/php/OnclickEnvTest.php::\OnclickEnvTest' flowId='8772']
+##teamcity[testStarted name='testgetEnvName' locationHint='php_qn:///home/brijeshdhaker/IdeaProjects/creativelights.in/src/test/php/OnclickEnvTest.php::\OnclickEnvTest::testgetEnvName' flowId='8772']
+##teamcity[testFinished name='testgetEnvName' duration='12242' flowId='8772']
+##teamcity[testSuiteFinished name='OnclickEnvTest' flowId='8772']

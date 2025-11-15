@@ -1,0 +1,3 @@
+Onclick Env
+ [x] Get env name
+

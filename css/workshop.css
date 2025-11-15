@@ -171,7 +171,7 @@ hr {
     position: absolute;
     left: 0%; /* centers the loading animation horizontally one the screen */
     top: 15%; /* centers the loading animation vertically one the screen */
-    background-image: url(../img/loading.gif); /* path to your loading animation */
+    background-image: url(../images/loading.gif); /* path to your loading animation */
     background-repeat: no-repeat;
     background-position: center;
     /*margin: -100px 0 0 -100px; */ /* is width and height divided by two */
@@ -372,7 +372,7 @@ opacity: .9;
     background-color: #fec503;
 }
 #vision {
-    background-image: url('../img/01_services.jpg');
+    background-image: url('../images/01_services.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 580px;
@@ -425,7 +425,7 @@ opacity: .9;
 ********** Workshop *******
 **************************/
 #workshop {
-    background-image: url('../img/01_services.jpg');
+    background-image: url('../images/01_services.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 420px;
@@ -443,7 +443,7 @@ opacity: .9;
 ********** Blog ***********
 **************************/
 #blog {
-    background-image: url('../img/01_services.jpg');
+    background-image: url('../images/01_services.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 420px;
@@ -1103,7 +1103,7 @@ figure.effect-portfolio:hover img {
 }
 
 #advance_course {
-    background-image: url('../img/06_advance_course.jpg');
+    background-image: url('../images/06_advance_course.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -1141,7 +1141,7 @@ figure.effect-portfolio:hover img {
 ****** About Section ******
 **************************/
 #about {
-    background-image: url('../img/03_about.jpg');
+    background-image: url('../images/03_about.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -1502,10 +1502,10 @@ border-color: #E3B106;
 }
 
 /* Slide 1 */
-#parallax .bcg {background-image:url('../img/08_parallax.jpg')}
+#parallax .bcg {background-image:url('../images/08_parallax.jpg')}
 
 /* Slide 2 */
 #about-parallax .bcg {
-    background-image:url('../img/09_about_parallax.jpg');
+    background-image:url('../images/09_about_parallax.jpg');
     color: #ffffff;
 }

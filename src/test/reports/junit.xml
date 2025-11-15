@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="OnclickEnvTest" file="/home/brijeshdhaker/IdeaProjects/creativelights.in/src/test/php/OnclickEnvTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.025036">
+    <testcase name="testgetRepositoryPath" file="/home/brijeshdhaker/IdeaProjects/creativelights.in/src/test/php/OnclickEnvTest.php" line="69" class="OnclickEnvTest" classname="OnclickEnvTest" assertions="1" time="0.025036"/>
+  </testsuite>
+</testsuites>

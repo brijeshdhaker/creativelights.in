@@ -32,7 +32,7 @@ Updated: Feb. 13, 2015
     p.atext { width: 100% }
     #about h2 { margin: 0 auto }
     #about {
-        background-image: url('../img/04_about_mobile.jpg');
+        background-image: url('../images/04_about_mobile.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -108,7 +108,7 @@ Updated: Feb. 13, 2015
     }
 
     #vision {
-        background-image: url('../img/02_mobile_services.jpg');
+        background-image: url('../images/02_mobile_services.jpg');
         height: 500px;
     }
     .dark-overlay {
@@ -116,7 +116,7 @@ Updated: Feb. 13, 2015
         padding-top: 100px;
     }
     #blog {
-        background-image: url('../img/02_mobile_services.jpg');
+        background-image: url('../images/02_mobile_services.jpg');
         height: 350px;
     }
     h1 {

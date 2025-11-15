@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="HttpAuthHelper.php" path="/utils">
+    <totals>
+      <lines total="17" comments="11" code="6" executable="0" executed="0" percent="0"/>
+      <methods count="0" tested="0" percent="0"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="0" tested="0" percent="0"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="HttpAuthHelper" start="14" executable="0" executed="0" crap="0">
+      <namespace name=""/>
+    </class>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_COMMENT">/*</token>
+      </line>
+      <line no="4">
+        <token name="T_COMMENT"> * To change this license header, choose License Headers in Project Properties.</token>
+      </line>
+      <line no="5">
+        <token name="T_COMMENT"> * To change this template file, choose Tools | Templates</token>
+      </line>
+      <line no="6">
+        <token name="T_COMMENT"> * and open the template in the editor.</token>
+      </line>
+      <line no="7">
+        <token name="T_COMMENT"> */</token>
+      </line>
+      <line no="8"/>
+      <line no="9">
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="10">
+        <token name="T_DOC_COMMENT"> * Description of HttpAuthHelper</token>
+      </line>
+      <line no="11">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="12">
+        <token name="T_DOC_COMMENT"> * @author brijeshdhaker</token>
+      </line>
+      <line no="13">
+        <token name="T_DOC_COMMENT"> */</token>
+      </line>
+      <line no="14">
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">HttpAuthHelper</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="15">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_COMMENT">//put your code here</token>
+      </line>
+      <line no="16">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="17"/>
+    </source>
+  </file>
+</phpunit>

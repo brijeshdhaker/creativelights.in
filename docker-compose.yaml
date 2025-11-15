@@ -1,0 +1,112 @@
+#
+# Use root/paSSW0rd user/password credentials
+#
+# docker volume create --name sandbox_apps_path --opt type=none --opt device=/apps --opt o=bind
+# docker volume create --name sandbox_mysql_data --opt type=none --opt device=/apps/sandbox/mysql/data --opt o=bind
+#
+# docker compose -f docker-compose.yaml up -d mysqlserver
+# docker compose -f docker-compose.yaml down mysqlserver
+#
+# docker compose -f docker-compose.yaml up -d creativelights.in
+# docker compose -f docker-compose.yaml down creativelights.in
+#
+# docker exec -it mysqlserver mysql --user=root --password=paSSW0rd --host=mysqlserver.sandbox.net --database=CREATIVELIGHTS
+# docker exec -it mysqlserver mysql --user=creativelights --password=paSSW0rd --host=mysqlserver.sandbox.net --database=CREATIVELIGHTS
+#
+# docker exec -it mysqlserver /bin/bash
+# docker exec -it creativelights.in /bin/bash
+# 
+# docker compose up --build
+# docker compose watch
+---
+
+
+services:
+  #
+  # Mysql Server
+  #
+  mysqlserver:
+    image: mysql:8.0.33
+    container_name: mysqlserver
+    hostname: mysqlserver.sandbox.net
+    restart: always
+    ports:
+      - "3306:3306"
+    command: "mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci"
+    volumes:
+      - sandbox_apps_path:/apps
+      - sandbox_mysql_data:/var/lib/mysql
+      - ./conf/mysql:/etc/mysql/conf.d
+    user: root
+    secrets:
+      - mysql-root-password
+    env_file:
+      - ./conf/mysql/envvars
+    healthcheck:
+      test: ["CMD", 'mysqladmin', 'ping', '-h', 'localhost', '-u', '$$MYSQL_ADMIN_USER', '-p$$MYSQL_ADMIN_PASSWORD' ]
+      interval: 10s
+      timeout: 20s
+      retries: 10
+    extra_hosts:
+      - docker.sandbox.net:172.18.0.1
+
+  #
+  # Apache Server
+  #
+  creativelights.in:
+    image: brijeshdhaker/php:8.4.13
+    build:
+      context: .
+      target: development
+    container_name: creativelights.in
+    hostname: creativelights.in
+    restart: always
+    depends_on:
+      mysqlserver:
+        condition: service_healthy
+    ports:
+      - "80:80"
+    volumes:
+      - sandbox_apps_path:/apps
+      - .:/var/www/html
+#      - ${PWD}/conf/apache/apache2.conf:/etc/apache2/apache2.conf
+#      - ${PWD}/conf/apache/envvars:/etc/apache2/envvars
+#      - /home/brijeshdhaker/IdeaProjects/creativelights.in/conf/php/php.ini:/usr/local/etc/php/php.ini
+      - /apps/var/logs/creativelights.in:/var/log/creativelights.in:rw
+    env_file:
+      - ./envvars
+    secrets:
+      - mysql-root-password
+    environment:
+      - XDEBUG_MODE=develop,debug,coverage
+    healthcheck:
+      test: echo $(hostname -f) || exit 1
+      timeout: 20s
+      retries: 10
+    # develop:
+    #   watch:
+    #     - action: sync
+    #       path: ${PWD}
+    #       target: /var/www/html
+    extra_hosts:
+      - docker.sandbox.net:172.18.0.1      
+
+
+#
+volumes:
+  sandbox_apps_path:
+    external: true
+  sandbox_mysql_data:
+    external: true
+
+#
+secrets:
+  mysql-root-password:
+    file: ./conf/mysql/password.txt
+
+#
+networks:
+  default:
+    external: true
+    driver: bridge
+    name: sandbox.net

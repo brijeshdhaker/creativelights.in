@@ -25,10 +25,10 @@
 
         <!-- Favicons
         ================================================== -->
-        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
 
         <script type="text/javascript" src="/scripts/modernizr.js"></script>
 
@@ -60,7 +60,7 @@
                         <span class="icon-bar"></span>              
                     </button>
                     <a class="navbar-brand" href="/htmls/home.php?_dc=fdfs&page=blog&sTgt=site">
-                        <img src="/img/cs_11x.png" alt="logo"></a> <!-- Your logo here-->
+                        <img src="/images/cs_11x.png" alt="logo"></a> <!-- Your logo here-->
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->

@@ -54,18 +54,18 @@ services:
   # Apache Server
   #
   creativelights.in:
-    image: brijeshdhaker/php:8.4.13
-    build:
-      context: .
-      target: development
+    image: creativelights.in:php-8.5.8
+    # build:
+    #   context: .
+    #   target: development
     container_name: creativelights.in
     hostname: creativelights.in
     restart: always
-    depends_on:
-      mysqlserver:
-        condition: service_healthy
+    # depends_on:
+    #   mysqlserver:
+    #     condition: service_healthy
     ports:
-      - "80:80"
+      - "8001:80"
     volumes:
       - sandbox_apps_path:/apps
       - .:/var/www/html
